@@ -1,3 +1,5 @@
 # JS_DOMmanipulation
 
-Exercice réalisé dans le cadre de la formation THP
+Exercices réalisés dans le cadre de la formation THP
+
+=> Manipulation du DOM et écoute d'événements
