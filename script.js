@@ -65,19 +65,20 @@ function toggleBootstrap(){
 }
 
 // FONCTIONNALITÉ 6
-let cards = document.querySelectorAll('div.card');
+let cards = document.querySelectorAll('div.card')
 // console.log(cards);
 
 for (let i=0;i < cards.length;i++){
   card = cards[i];
-  card.addEventListener("mouseenter", modifyCard)
+  let btn = card.querySelector('button.btn-success');
+  btn.addEventListener("mouseenter", modifyCard)
 }
 
 function modifyCard(){
-  card_img = this.getElementsByTagName('img')[0]
-  card_text = this.getElementsByTagName('p')[0]
-  this.classList.toggle('reduce');
-  if (this.classList.contains('reduce')){
+  card_img = this.parentNode.parentNode.parentNode.parentNode.getElementsByTagName('img')[0]
+  card_text = this.parentNode.parentNode.parentNode.parentNode.getElementsByTagName('p')[0]
+  this.parentNode.parentNode.parentNode.parentNode.classList.toggle('reduce');
+  if (this.parentNode.parentNode.parentNode.parentNode.classList.contains('reduce')){
     card_img.style.width="20%";
     card_text.style.display="none";
   }else{
@@ -99,8 +100,8 @@ btn_right.innerHTML = "RIGHT";
 btn_right.classList.add("btn","btn-secondary");
 btn1.replaceWith(btn_left);
 btn2.replaceWith(btn_right);
-btn_left.addEventListener('click', lastCardBecomeFirst);
-btn_right.addEventListener('click', firstBecomeLast);
+btn_left.addEventListener('click', firstBecomeLast);
+btn_right.addEventListener('click', lastCardBecomeFirst);
 
 function lastCardBecomeFirst(){
   let cards = document.querySelectorAll('div.card');
